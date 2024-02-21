@@ -62,14 +62,15 @@ Promise.all([
 
       
       card.addEventListener('click', () => {
-          document.querySelectorAll('.card').forEach(card => card.classList.remove('selected'))
-          card.classList.toggle('selected')
-          if(card.classList.contains('selected')) {
+          if(!card.classList.contains('selected')) {
+            document.querySelectorAll('.card').forEach(card => card.classList.remove('selected'))
             name.textContent = `${learner.fullName}, ID ${learner.id}`
             fetchLearner.textContent = `The selected learner is ${learner.fullName}`
+            card.classList.add('selected')
           } else {
             name.textContent = `${learner.fullName}`
             fetchLearner.textContent = 'No learner is selected'
+            card.classList.remove('selected')
           }
         
           })
