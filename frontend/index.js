@@ -59,6 +59,7 @@ Promise.all([
       card.appendChild(name)
       card.appendChild(email)
       card.appendChild(mentorHeading)
+      card.appendChild(mentorList)
 
       
       card.addEventListener('click', () => {
